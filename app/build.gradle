@@ -28,36 +28,36 @@ def daggerVersion = "2.11"
 def glideVersion = "3.8.0"
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
     //Butterknife
-    compile "com.jakewharton:butterknife:${butterknifeVersion}"
+    implementation "com.jakewharton:butterknife:${butterknifeVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${butterknifeVersion}"
     //Retrofit2
-    compile "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
-    compile "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
     //RxJava RxAndroid
-    compile "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
-    compile "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+    implementation "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
     // Dagger2
-    compile "com.google.dagger:dagger:${daggerVersion}"
+    implementation "com.google.dagger:dagger:${daggerVersion}"
     annotationProcessor "com.google.dagger:dagger-compiler:${daggerVersion}"
     // Glide
-    compile "com.github.bumptech.glide:glide:${glideVersion}"
+    implementation "com.github.bumptech.glide:glide:${glideVersion}"
 
-    compile 'com.android.support:appcompat-v7:28.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:28.0.0'
-    compile 'com.android.support:support-v4:28.0.0'
-    compile 'com.android.support:cardview-v7:28.0.0'
-    compile 'com.android.support:recyclerview-v7:28.0.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'junit:junit:4.12'
     provided 'javax.annotation:jsr250-api:1.0'
     //Recyclerview assertions
-    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2.2'){
+    androidTestImplementation ('com.android.support.test.espresso:espresso-contrib:2.2.2'){
         exclude module: 'support-annotations'
         exclude module: 'support-v4'
         exclude module: 'support-v13'
@@ -66,6 +66,6 @@ dependencies {
         exclude module: 'design'
     }
     //Mock web server
-    androidTestCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
+    androidTestImplementation 'com.squareup.okhttp3:mockwebserver:3.6.0'
 
 }
